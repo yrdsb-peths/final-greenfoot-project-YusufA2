@@ -8,7 +8,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-
+    /**
+     * Constructor for objects of class MyWorld
+     * 
+     */
+    Player bluePlayer = new Player(0,0,255);
+    Player greenPlayer = new Player(0,255,0);
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,7 +24,8 @@ public class MyWorld extends World
         super(600, 400, 1);
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
-        
+        addObject(bluePlayer, 450, 100);
+        addObject(greenPlayer, 150, 100);
     }
     
     
