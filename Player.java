@@ -13,7 +13,8 @@ public class Player extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int r, g, b;
-    int speed = 5;
+    int speed = 3;
+    int count = 0;
     public Player(int r, int g, int b)
     {
         setRotation(270);
@@ -26,6 +27,8 @@ public class Player extends Actor
     }
     public void act()
     {
+        count++;
+        getWorld().addObject(new Tail(r, g, b), getX(),getY());
         move(speed);
         if(Greenfoot.isKeyDown("right"))
             setRotation(0);

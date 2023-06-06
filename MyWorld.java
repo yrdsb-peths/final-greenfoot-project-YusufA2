@@ -24,8 +24,8 @@ public class MyWorld extends World
         super(600, 400, 1);
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
-        addObject(bluePlayer, 450, 100);
-        addObject(greenPlayer, 150, 100);
+        addObject(bluePlayer, 450, 200);
+        addObject(greenPlayer, 150, 200);
     }
     
     
