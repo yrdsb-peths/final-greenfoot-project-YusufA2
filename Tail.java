@@ -13,15 +13,21 @@ public class Tail extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int r, g, b;
+    int count = 0;
     public Tail(int r, int g, int b)
     {
         this.r = r;
         this.g = g;
         this.b = b;
+        getImage().setColor(new Color(r,g,b));
+        getImage().fillRect(0,0,40,40);
         
     }
     public void act()
     {
+        count++;
+        if (count > 60)
+        getWorld().removeObject(this);
         // Add your action code here.
     }
 }
