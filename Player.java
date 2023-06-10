@@ -15,7 +15,7 @@ public class Player extends Actor
     int r, g, b, player;
     int speed = 3;
     int count = 0;
-    public Player(int r, int g, int b)
+    public Player(int player, int r, int g, int b)
     {
         setRotation(270);
         this.r = r;
