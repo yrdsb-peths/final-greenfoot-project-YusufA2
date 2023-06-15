@@ -27,9 +27,9 @@ public class MyWorld extends World
         getBackground().setColor(Color.BLACK);
         getBackground().fill();
         addObject(bluePlayer, 450, 300);
-        addObject(blueCounter, 600, 50);
+        addObject(blueCounter, 550, 50);
         addObject(greenPlayer, 150, 200);
-        addObject(greenCounter, 250, 50);
+        addObject(greenCounter, 50, 50);
         
     }
     
