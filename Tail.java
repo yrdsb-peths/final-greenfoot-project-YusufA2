@@ -12,8 +12,10 @@ public class Tail extends Actor
      * Act - do whatever the Tail wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    int r, g, b;
-    int count = 0;
+    int r, g, b, player;
+    int countLength = 0;
+    static int blueLength = 1;
+    static int greenLength = 1;
     public Tail(int r, int g, int b)
     {
         this.r = r;
@@ -25,9 +27,20 @@ public class Tail extends Actor
     }
     public void act()
     {
-        count++;
-        if (count > 60)
+        countLength++;
+    if(countLength>15 && isTouching(Player.class))
+    {
+        getWorld().addObject(new YouLose(), getWorld().getWidth()/2, getWorld().getHeight()/2);
+        Greenfoot.stop();
+    } 
+        if (player == 0 && countLength % blueLength == 0){
         getWorld().removeObject(this);
-        // Add your action code here.
+        blueLength++;
     }
+    if (player == 4 && countLength % greenLength == 0){
+        getWorld().removeObject(this);
+        greenLength++;
+    }
+    
+}
 }

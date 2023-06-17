@@ -21,10 +21,22 @@ public class Counter extends Actor
     {
         // Add your action code here.
         setImage(new GreenfootImage("Score: " + score, 30, Color.BLACK, Color.WHITE));
-        
+        youWin();
     }
     public void addScore()
     {
         score++;
+    }
+    public int getScore()
+    {
+        return score;
+    }
+    public void youWin()
+    {
+        if(score == 10)
+        {
+            getWorld().addObject(new YouWin(), getWorld().getWidth()/2, getWorld().getHeight()/2);
+            Greenfoot.stop();  
+    }
     }
 }

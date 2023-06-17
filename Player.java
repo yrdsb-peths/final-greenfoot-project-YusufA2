@@ -31,7 +31,13 @@ public class Player extends Actor
         count++;
         getWorld().addObject(new Tail(r,g,b), getX(),getY());
         move(speed);
-        if (this.player == 0){
+        moveAround();
+        eatFood();
+        
+    }
+    public void moveAround()
+    {
+       if (this.player == 0){
             if(Greenfoot.isKeyDown("right"))
                 setRotation(0);
             if(Greenfoot.isKeyDown("left"))
@@ -50,10 +56,19 @@ public class Player extends Actor
                 setRotation(270);
             if(Greenfoot.isKeyDown("s"))
                 setRotation(90);
-        }
-        
-            
-        
-        
+        } 
+    }
+    public void eatFood()
+    {
+       if(isTouching(Food.class) && player == 0)
+       {
+          MyWorld myWorld = (MyWorld)getWorld();
+          myWorld.blueCounter.addScore();
+       }
+       if(isTouching(Food.class) && player == 4)
+       {
+          MyWorld myWorld = (MyWorld)getWorld();
+          myWorld.greenCounter.addScore();
+       }
     }
 }// Add your action c}}
